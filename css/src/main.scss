@@ -1,0 +1,400 @@
+
+$teal: #27BDC0;
+$navy: #082D4B;
+$blue: #016EA6;
+$seafoam: #2BBFCC;
+$sky: #96D9ED;
+$purple: #4162AC;
+$forest: #006842;
+$green: #73B643;
+$lime: #A8C538;
+$red: #D42027;
+$gold: #D8BC48;
+$grey: #979B9F;
+$grey-light: #939598;
+$grey-dark: #414042;
+$black: #231F20;
+$orange: #F47D20;
+$tan: #D6D5D4;
+$maroon: #831528;
+
+$link-color: $maroon;
+
+@import "reset";
+
+@import "fonts";
+
+@import "mixins";
+
+@import "base";
+
+@import "grid";
+
+
+body {
+	background: lighten( $tan, 15% );
+}
+
+
+.bg-container {
+	background: white;
+	box-shadow: 0 0 50px darken( $tan, 25% );
+}
+
+
+
+header {
+	text-align: center;
+	border-bottom: 20px solid $maroon;
+
+	@include respond-to( 768px ) {
+		border-bottom: 50px solid $maroon;
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+
+
+// wrap div
+.wrap {
+	max-width: 1150px;
+	margin: 0 auto;
+	position: relative;
+	@include clearfix;
+}
+
+
+
+// background colors
+.bg-navy { background: $navy; }
+.bg-purple { background: $purple; }
+.bg-teal { background: $teal; }
+.bg-red { background: $red; }
+.bg-lime { background: $lime; }
+.bg-forest { background: rgba( $forest, .1 ); }
+.bg-black { background: $black; }
+.bg-seafoam { background: $seafoam; }
+.bg-blue { background: $blue; }
+.bg-black { background: $black; }
+.bg-orange { background: $orange; }
+.bg-tan { background: $tan; }
+.bg-maroon { background: $maroon; }
+.bg-grey-light { background: #999999; }
+.bg-grey-medium { background: #828282; }
+.bg-grey-dark { background: #606160; }
+
+
+
+// text colors
+.text-navy { color: $navy; }
+.text-purple { color: $purple; }
+.text-teal { color: $teal; }
+.text-red { color: $red; }
+.text-lime { color: $lime; }
+.text-forest { color: $forest; }
+.text-black { color: $black; }
+.text-seafoam { color: $seafoam; }
+.text-blue { color: $blue; }
+.text-black { color: $black; }
+.text-grey-light { color: $grey-light; }
+.text-grey-dark { color: $grey-dark; }
+.text-orange { color: $orange; }
+.text-maroon { color: $maroon; }
+
+
+
+// padding
+.pad {
+	padding: 20px;
+
+	&.title {
+		padding: 20px 30px;
+
+		@include respond-to( 768px ) {
+			padding: 23px 60px 20px;
+		}
+	}
+}
+
+
+
+.intro {
+	@include clearfix;
+	padding: 20px;
+	color: $navy;
+	font-size: 1.4em;
+	line-height: 1.6em;
+
+	@include respond-to( 768px ) {
+		padding: 10px 50px;
+	}
+
+	@include respond-to( 1024px ) {
+		padding: 20px 100px;
+	}
+
+	@include respond-to( 1150px ) {
+		padding: 30px 140px;
+	}
+
+	.btn {
+		width: 100%;
+		white-space: nowrap;
+		text-align: center;
+		padding: 10px 0;
+
+		@include respond-to( 1024px ) {
+			width: 300px;
+		}
+
+		@include respond-to( 768px ) {
+			padding: 20px 0;
+		}
+	}
+}
+
+
+.savings-thermometer {
+	@include respond-to( 500px ) {
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+
+	@include respond-to( 768px ) {
+		margin: 0 0 15px 15px;
+	}
+
+	@include respond-to( 860px ) {
+		margin: 0 0 25px 25px;
+	}
+}
+
+
+.columns {
+	padding: 0;
+
+	@include respond-to( 768px ) {
+		padding: 10px 20px;
+	}
+}
+
+
+
+// calculator styles
+.calculators {
+	@include respond-to( 1024px ) {
+		padding: 20px;
+	}
+
+	@include respond-to( 1150px ) {
+		padding: 30px 40px;
+	}
+
+	.calculator {
+		padding: 20px;
+		color: white;
+		position: relative;
+
+		.third.first {
+			text-align: center;
+		}
+
+		@include respond-to( 768px ) {
+			margin: 0 0 20px;
+			border-radius: 25px;
+			padding: 20px;
+
+			.third { 
+				width: 30%;
+
+				&.first {
+					width: 40%;
+
+					img {
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+
+
+		@include respond-to( 768px ) {
+			&.credit, &.loan-auto, &.loan-personal {
+				position: relative;
+				padding: 20px;
+			}
+		}
+
+
+		.rate-display {
+			@include clearfix;
+			padding-bottom: 20px;
+			
+			.start {
+				display: block;
+				text-align: center;
+				font-size: 1.2em;
+				padding: 0 0 10px 0;
+			}
+
+			h2, .end {
+				float: left;
+				@include font-title;
+			}
+
+			h2 {
+				width: 60%;
+				font-size: 60px;
+				line-height: 1.2em;
+				padding: 0 10px 0 0;
+				text-align: right;
+
+				@include respond-to( 768px ) { width: 78%; }
+			}
+
+			.end {
+				width: 30%;
+				font-size: 17px;
+				line-height: 1.2em;
+
+				span {
+					font-size: 30px;
+				}
+
+				@include respond-to( 768px ) { width: 22%; }
+			}
+		}
+		
+		.result {
+			@include font-bold;
+			font-size: 1.8em;
+			line-height: 1.2em;
+			text-align: center;
+			padding: 15px 0 0;
+
+			strong {
+				display: block;
+			}
+		}
+
+		@include respond-to( 768px ) {
+			&.home .result {
+				padding-top: 115px;
+			}
+		}
+	}	
+}
+
+
+
+.ad {
+	@include respond-to( 1100px ) {
+		padding: 30px 40px;
+	}
+
+	img {
+		display: block;
+	}
+}
+
+
+
+.contact {
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 30px;
+	}
+
+	@include respond-to( 960px ) {
+		padding: 35px 50px;
+	}
+}
+
+
+
+.error {
+	@include font-bold;
+	padding: 10px 15px;
+	background: $red;
+	color: white;
+	border-radius: 8px;
+	display: none;
+}
+
+
+
+// footer styles
+.footer-bar {
+	background: $navy;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	font-weight: 300;
+	
+	strong {
+		font-size: 2.2em;
+		line-height: 1.7em;
+	}
+
+	@include respond-to( 768px ) {
+		@include respond-to( 768px ) {
+
+		}
+	}
+}
+
+
+.footer-logo {
+	text-align: center;
+	padding: 40px 20px 20px;
+}
+
+
+
+.btn {
+	@include font;
+	display: inline-block;
+	padding: 10px 15px;
+	background: $maroon;
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	transition: 400ms opacity ease-in-out;
+	opacity: .8;
+	border: 0;
+	cursor: pointer;
+	border-radius: 20px;
+	
+	@include respond-to( 768px ) {
+		padding: 20px 40px;
+	}
+
+	&:hover {
+		opacity: 1;
+		color: white;
+	}
+}
+
+
+
+.fineprint {
+	padding: 20px;
+	font-size: .7em;
+	line-height: 1.5em;
+	color: #555;
+
+	img {
+		float: right;
+		margin: 0 0 15px 15px;
+	}
+}
+
+
