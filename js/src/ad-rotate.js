@@ -11,7 +11,7 @@ $(function(){
 			.show()
 			.end()
 			.appendTo('.promotion');
-	},  3000);
+	},  4000);
 	
 });
 
